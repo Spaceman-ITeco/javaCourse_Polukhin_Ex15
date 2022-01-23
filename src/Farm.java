@@ -89,7 +89,7 @@ final String name;
         Map<Creature,List<Farm>> groupCreaturesByType = farms.stream().collect(Collectors.groupingBy(Farm::getCreature));
         groupCreaturesByType.forEach((creature, farm) ->{
             System.out.println(creature);
-            farm.stream().sorted(Comparator.comparing(Farm::getAge)).forEach(farm1 -> System.out.println(farm1.getName() + " " + farm1.getAge() + farm1.weight()));
+            farm.stream().sorted(Comparator.comparing(Farm::getAge)).forEach(farm1 -> System.out.println(farm1.getName() + " " + farm1.getAge() + " " + farm1.weight()));
         });
         farms.stream().max(Comparator.comparing(Farm::getAge)).ifPresent(farm ->System.out.println("Самый большой возраст на ферме у: " + farm.getName() + " " + farm.getAge()));
         farms.stream().min(Comparator.comparing(Farm::weight)).ifPresent(farm ->System.out.println("Самый маленький вес на ферме у: " + farm.getName() + " " + farm.getAge()));
